@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+div img {
+  width: 400px;
+  height: auto;
+}
+
+body {
+  background-color: black;
+}
+
+.principalMessage {
+  border-style: outset;
+  border-right: black;
+  border-left: black;
+  border-top: black;
+  border-bottom: black;
+  padding-top: 5%;
+  padding-bottom: 7%;
+  margin-bottom: 1%;
+}
+.principalMessage h1 {
+  color: white;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+.principalMessage h2 {
+  color: white;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.productos {
+  margin-bottom: 3%;
+}
+.activities div img {
+  padding: 20px;
+  transition: transform 0.1s;
+  margin-bottom: 8%;
+  width: 90%;
+}
+.activities div img:hover {
+  /* IE 9 */
+  /* Safari 3-8 */
+  transform: scale(1.08);
+}
+
+.h2Style {
+  color: white;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+div form div label {
+  color: white;
+}
+div form div input {
+  color: gray;
+}
+
+.h1Animation {
+  animation-duration: 2s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.stickers {
+  margin-bottom: 5%;
+  margin-top: 8%;
+}
+.stickers div {
+  background-color: rgb(197, 190, 190);
+  margin-bottom: 2%;
+  transition: transform 0.1s;
+}
+.stickers div:hover {
+  /* IE 9 */
+  /* Safari 3-8 */
+  transform: scale(1.08);
+}
+.stickers div article div {
+  margin-bottom: 100rem;
+  padding: 20px;
+  transition: transform 0.1s;
+  height: 8rem;
+}
+.stickers div article div div p {
+  text-align: center;
+  color: mainColor;
+}
+
+nav {
+  padding-bottom: 1 px;
+  padding-top: 0%;
+  background-color: white;
+  text-align: center;
+  font-size: 1.6rem;
+  color: gray;
+}
+nav div {
+  background-color: rgb(44, 44, 44);
+  height: auto;
+}
+nav div a img {
+  padding-top: 3%;
+  padding-bottom: 0.3%;
+  width: 250px;
+}
+nav div .button {
+  border-color: white;
+  color: white;
+  background-color: gray;
+}
+nav div div div a {
+  font-family: "Roboto", sans-serif;
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  color: white;
+  border-color: white;
+  font-size: 1.5rem;
+}
+nav div div div a:hover {
+  color: yellowgreen;
+}
+nav div div div a {
+  font-family: "Roboto", sans-serif;
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  color: white;
+  border-color: white;
+  font-size: 1.5rem;
+}
+nav div div div a:hover {
+  color: yellowgreen;
+}
+nav div div div a {
+  font-family: "Roboto", sans-serif;
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  color: white;
+  border-color: white;
+  font-size: 1.5rem;
+}
+nav div div div a:hover {
+  color: yellowgreen;
+}
+nav div div div a {
+  font-family: "Roboto", sans-serif;
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  color: white;
+  border-color: white;
+  font-size: 1.5rem;
+}
+nav div div div a:hover {
+  text-decoration: underline;
+}
+
+.aHover:hover {
+  color: yellowgreen;
+}
+
+footer {
+  margin-bottom: -1%;
+  background-color: rgb(44, 44, 44);
+  padding-bottom: 2%;
+  border-style: groove;
+  border-color: white;
+  border-right: hidden;
+  border-left: hidden;
+  border-left: -1%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+footer div div img {
+  padding: 20px;
+  transition: transform 0.1s;
+  padding-top: 10%;
+  padding-left: 10%;
+  margin-bottom: 10%;
+  height: 100px;
+  width: 90%;
+}
+footer div div img:hover {
+  /* IE 9 */
+  /* Safari 3-8 */
+  transform: scale(1.08);
+}
+footer div .divSocialIcons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer div .divSocialIcons a {
+  text-decoration: none;
+}
+footer div div {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20%;
+  line-height: 40px;
+  align-items: center;
+}
+footer div div a {
+  color: white;
+}
+footer div div a:hover {
+  color: yellowgreen;
+}
+footer div div {
+  display: flex;
+  flex-direction: column;
+  padding-top: 12%;
+  line-height: 50px;
+  align-items: center;
+}
+footer div div a:hover {
+  color: yellowgreen;
+}
+.cards {
+    background-color: rgb(222, 218, 218);
+}
