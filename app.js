@@ -1,15 +1,4 @@
-
-createDatabase();
-class Product {
-    constructor(id, name, price, type, image = false) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.type = type;
-        this.image = image;
-    }
-}
-
+//create classes 
 class Database {
     constructor() {
         this.products = [];
@@ -24,9 +13,9 @@ class Database {
         this.insertProduct(9, "Bastones de trekking", 10000, "accesorios", "palos.png");
         this.insertProduct(10, "Remera deportiva mujer", 15000, "indumentaria", "remera.png");
         this.insertProduct(11, "riñonera deportiva", 6500, "accesorios", "riñonera.png");
-        this.insertProduct(12, "Zapatillas con base de caucho", 50000, "calzado", "zapatillas.png");
-        console.log(this.products)
+        this.insertProduct(12, "Zapatillas con base de caucho", 50000, "calzado", "zapatilas.png");
     }
+
 
     insertProduct(id, name, price, type, image) {
         const product = new Product(id, name, price, type, image);
@@ -38,7 +27,7 @@ class Database {
         return this.products;
     }
 
-    findProductById () {
+    findProductById(id) {
 
         return this.products.find((product) => product.id === id);
     }
@@ -56,21 +45,77 @@ class Database {
 
 }
 
- function createDatabase() {
- const db = new Database();
-}
 
-const divProducts = document.querySelector("#products");
-function loadProducts() {
-    const products = db.getProducts();
-    for(const product of products) {
-        divProducts.innerHTML += 
-        `
-        <div class="product">
-        <h2> ${product.name} </h2>
-        <p> ${product.price} </p>
-        <img src="img/${product.image}></img>
-        <p> <a href="#">Agregar al carrito </a></p>
-        `;
+class ShoppingCart {
+    constructor() {
+        this.shoppingCart = [];
+        this.total = 0;
+        this.totalProducts = 0;
+    }
+
+    isInTheCart({ id }) {
+        return this.shoppingCart.find((product) => product.id === id);
+    }
+
+    addProductToTheCart(product) {
+        let productInCart = this.isInTheCart(product);
+        if (productInCart) {
+            productInCart.cant++;
+            console.log("entra en el if");
+        } else {
+            console.log("entra en el else");
+            this.shoppingCart.push({...product, cant: 1});
+        }
+        console.log(productInCart);
     }
 }
+
+
+
+class Product {
+    constructor(id, name, price, type, image = false) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.type = type;
+        this.image = image;
+
+    }
+}
+
+//load products 
+const db = new Database();
+
+const divProducts = document.querySelector("#products");
+loadProducts();
+
+function loadProducts() {
+    const products = db.getProducts();
+    divProducts.innerHTML = "";
+    for (const product of products) {
+        divProducts.innerHTML += `
+        <div class="row">
+         <div class="card cards col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xxl-3">
+          <img class="card-img-top" src="../img/${product.image}" width= "140" alt="Card image cap">
+           <div class="card-body"> 
+           <h5 class="card-title">${product.name}</h5> 
+           <p class="card-text">$  ${product.price}</p> 
+           <a href="#" data-id="${product.id}" 
+           class="btn btn-warning btnAdd">Agregar al carrito</a> </div> </div> `
+           ;
+    }
+
+    const btnAdds = document.querySelectorAll(".btnAdd");
+    for (const button of btnAdds) {
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+            const product = db.findProductById(Number(button.dataset.id));
+            alert("Agregaste al carrito el producto " + product.name);
+            shoppingCart.addProductToTheCart(product);
+        });
+    }
+}
+
+const shoppingCart = new ShoppingCart();
+
+
